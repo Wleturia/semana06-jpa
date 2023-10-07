@@ -3,27 +3,36 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - master  # Replace with your project's main branch name
+      - master # Replace with your project's main branch name
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v2
+      - name: Checkout Repository
+        uses: actions/checkout@v2
 
-    - name: Set up Java
-      uses: actions/setup-java@v2
-      with:
-        java-version: '17'  # Use the Java version your project requires
+      - name: Set up Java
+        uses: actions/setup-java@v2
+        with:
+          java-version: "17" # Use the Java version your project requires
+          distribution: "adopt" # You can also use 'temurin' if you prefer
+          java-package: jdk
+          architecture: x64
+          check-latest: false
+          server-id: github
+          server-username: GITHUB_ACTOR
+          server-password: ${{ secrets.GITHUB_TOKEN }}
+          overwrite-settings: true
+          job-status: success
 
-    - name: Build and Package Spring Boot App
-      run: |
-        ./mvnw clean package -DskipTests=true
+      - name: Build and Package Spring Boot App
+        run: |
+          ./mvnw clean package -DskipTests=true
 
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./path/to/your/spring-boot-app/target  # Replace with the path to your Spring Boot JAR file
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./path/to/your/spring-boot-app/target # Replace with the path to your Spring Boot JAR file
