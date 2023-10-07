@@ -1,0 +1,4 @@
+com/example/demojpalab/libros/delivery/LibrosController.class
+com/example/demojpalab/libros/repository/LibroPersistence.class
+com/example/demojpalab/DemojpalabApplication.class
+com/example/demojpalab/libros/domain/Libro.class

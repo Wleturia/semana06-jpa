@@ -1,0 +1,4 @@
+/home/runner/work/semana06-jpa/semana06-jpa/src/main/java/com/example/demojpalab/DemojpalabApplication.java
+/home/runner/work/semana06-jpa/semana06-jpa/src/main/java/com/example/demojpalab/libros/repository/LibroPersistence.java
+/home/runner/work/semana06-jpa/semana06-jpa/src/main/java/com/example/demojpalab/libros/domain/Libro.java
+/home/runner/work/semana06-jpa/semana06-jpa/src/main/java/com/example/demojpalab/libros/delivery/LibrosController.java
