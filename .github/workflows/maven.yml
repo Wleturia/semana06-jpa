@@ -29,6 +29,7 @@ jobs:
 
       - name: Build and Package Spring Boot App
         run: |
+          chmod +x ./mvnw  # Grant execute permission to the Maven Wrapper script
           ./mvnw clean package -DskipTests=true
 
       - name: Deploy to GitHub Pages
