@@ -13,6 +13,7 @@ public class Libro {
   private String titulo;
   private String descripcion;
   private String autor;
+  private String editorial;
 
   public Long getId() {
     return id;
@@ -44,6 +45,14 @@ public class Libro {
 
   public void setAutor(String autor) {
     this.autor = autor;
+  }
+
+  public String getEditorial() {
+    return editorial;
+  }
+
+  public void setEditorial(String editorial) {
+    this.editorial = editorial;
   }
 
 }
