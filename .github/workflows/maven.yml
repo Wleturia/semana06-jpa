@@ -36,4 +36,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./path/to/your/spring-boot-app/target # Replace with the path to your Spring Boot JAR file
+          publish_dir: ./target # Replace with the path to your Spring Boot JAR file
